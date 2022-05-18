@@ -42,7 +42,7 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh "/usr/bin/envsubst < helloworld-deployment.yml > /tmp/helloworld-deployment.yml"
+                sh "/opt/homebrew/bin/envsubst < helloworld-deployment.yml > /tmp/helloworld-deployment.yml"
                 sh "mv /tmp/helloworld-deployment.yml helloworld-deployment.yml"
                 sh 'kubectly apply -f helloworld-deployment.yml'
             }
