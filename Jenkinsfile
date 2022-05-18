@@ -44,7 +44,7 @@ pipeline {
             steps {
                 sh "/opt/homebrew/bin/envsubst < helloworld-deployment.yml > /tmp/helloworld-deployment.yml"
                 sh "mv /tmp/helloworld-deployment.yml helloworld-deployment.yml"
-                sh 'kubectly apply -f helloworld-deployment.yml'
+                sh 'kubectl apply -f helloworld-deployment.yml'
             }
         }
     }
