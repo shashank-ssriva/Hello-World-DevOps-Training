@@ -18,8 +18,6 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('SonarCloud') {
-                echo env.BUILD_NUMBER
-                echo "${TAG}"
                 sh "/usr/bin/envsubst < sonar-project.properties > /tmp/sonar-project.properties"
                 sh "mv /tmp/sonar-project.properties sonar-project.properties"
                 sh "cat sonar-project.properties"
